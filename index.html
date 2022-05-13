@@ -11,30 +11,47 @@
             color-scheme: light dark;
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
         }
+        
+        pre {
+            overflow-wrap: break-word;
+            max-width: 100%;
+            white-space: pre-wrap;
+        }
     </style>
     <h1>Rebel Tag Input</h1>
     <p>A complete tag input for use in JavaScript web applications provided as a web component. Take a look at the code on <a href="https://github.com/fonsp/rebel-tag-input">GitHub</a>.</p>
     <rbl-tag-input id="tagElement"></rbl-tag-input>
+    <br>
     <button id="value">Show Value</button>
     <button id="clear">Clear</button>
     <button id="randomize">Randomize</button>
-    <script>
+    <br>
+    <pre id="eventlog">Event log:</pre>
+    <script type="module">
         const random_fruits = () => ["apple", "orange", "pear", "banana", "kiwi", "grapes", "watermelon", "pineapple", "coconut", "mango", "strawberry", "raspberry", "blueberry", "blackberry", "raspberries", "cranberry", "clementine", "cucumber", "tomato", "peach", "apricot", "avocado", "pear", "peach"].filter(() => Math.random() > 0.5).sort(() => Math.random() - 0.5)
         
-        const randomize = () => document.querySelector("#tagElement").value = random_fruits()
+        const taginput = document.querySelector("#tagElement")
+        
+        const randomize = () => taginput.value = random_fruits()
         
         document.querySelector("#value").addEventListener("click", function(){
-            var $element = document.querySelector("#tagElement");
+            var $element = taginput;
             alert($element.value);
         });
         document.querySelector("#clear").addEventListener("click", function(){
-            var $element = document.querySelector("#tagElement");
+            var $element = taginput;
             $element.empty();
         });
         document.querySelector("#randomize").addEventListener("click", function(){
             randomize()
         });
         randomize()
+        
+        const pre = document.querySelector("#eventlog")
+        
+        taginput.addEventListener("input", (e) => {
+            pre.innerText = pre.innerText + "\n\n" + JSON.stringify(taginput.value)
+        })
         
     </script>
 </body>
