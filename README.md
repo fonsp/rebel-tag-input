@@ -1,16 +1,19 @@
 rebel-tag-input
 ==============
 
-A complete tag input for use in JavaScript web applications provided as a web component. Take a look at a working [Demo](http://revillweb.github.io/rebel-tag-input/).
+A complete tag input for use in JavaScript web applications provided as a web component. 
+
+Forked from [aogilvie/rebel-tag-input](https://github.com/aogilvie/rebel-tag-input), which is in turn forked from [RevillWeb/rebel-tag-input](https://github.com/RevillWeb/rebel-tag-input).
+
+
 
 Usage
 =====
 
-Include the web components polyfill from [webcomponents.org](http://webcomponents.org/) and include the compiled version of the rebel-tag-input.js file.
+Go to https://www.jsdelivr.com/package/gh/fonsp/rebel-tag-input to find the latest script import.
 
 ````html
-<script src="webcomponents.min.js"></script>
-<script src="rebel-tag-input.js"></script>
+<script src="rebel-tag-input.mjs"></script>
 ````
 
 Add the custom element somewhere in your app:

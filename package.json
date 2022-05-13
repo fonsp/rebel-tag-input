@@ -1,6 +1,6 @@
 {
     "name": "rebel-tag-input",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A tag input written as a web component",
     "contributors": [
         {
@@ -12,6 +12,8 @@
             "url": "@allyogilvie"
         }
     ],
+    "main": "lib/rebel-tag-input.mjs",
+    "type": "module",
     "scripts": {
         "start": "wds --open --watch"
     },
