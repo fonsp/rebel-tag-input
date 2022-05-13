@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Rebel Tag Input Demo</title>
-    <script src="node_modules/webcomponentsjs/full.js"></script>
     <script src="lib/rebel-tag-input.js"></script>
 </head>
 <body>
+    <style>
+        html {
+            color-scheme: light dark;
+        }
+    </style>
     <h1>Rebel Tag Input</h1>
     <p>A complete tag input for use in JavaScript web applications provided as a web component. Take a look at the code on <a href="https://github.com/RevillWeb/rebel-tag-input">GitHub</a>.</p>
     <rbl-tag-input id="tagElement"></rbl-tag-input>
     <button id="value">Show Value</button>
     <button id="clear">Clear</button>
+    <button id="randomize">Randomize</button>
     <script>
+        const random_fruits = () => ["apple", "orange", "pear", "banana", "kiwi", "grapes", "watermelon", "pineapple", "coconut", "mango", "strawberry", "raspberry", "blueberry", "blackberry", "raspberries", "cranberry", "clementine", "cucumber", "tomato", "peach", "apricot", "avocado", "pear", "peach"].filter(() => Math.random() > 0.5).sort(() => Math.random() - 0.5)
+        
+        const randomize = () => document.querySelector("#tagElement").value = random_fruits()
+        
         document.querySelector("#value").addEventListener("click", function(){
             var $element = document.querySelector("#tagElement");
             alert($element.value);
@@ -21,6 +30,11 @@
             var $element = document.querySelector("#tagElement");
             $element.empty();
         });
+        document.querySelector("#randomize").addEventListener("click", function(){
+            randomize()
+        });
+        randomize()
+        
     </script>
 </body>
 </html>
