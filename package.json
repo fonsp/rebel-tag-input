@@ -1,7 +1,7 @@
 {
     "name": "rebel-tag-input",
-    "version": "0.0.1",
-    "description": "A tag input written as a ES2015 web component",
+    "version": "1.0.0",
+    "description": "A tag input written as a web component",
     "contributors": [
         {
             "name": "Leon Revill",
