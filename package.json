@@ -1,6 +1,6 @@
 {
-    "version": "1.0.5",
     "name": "@plutojl/rebel-tag-input",
+    "version": "1.0.6",
     "description": "A tag input written as a web component",
     "contributors": [
         {
